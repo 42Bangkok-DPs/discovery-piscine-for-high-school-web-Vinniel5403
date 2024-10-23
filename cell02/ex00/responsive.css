@@ -1,0 +1,29 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+}
+.box{
+    margin:0px;
+    background-color: aquamarine;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    border:2px solid;
+}
+.inner{
+    display: grid;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    border:1px solid;
+}
+#pink {
+    background-color: rgb(255, 205, 213);
+}
+#blue{
+    background-color: rgb(161, 250, 255);
+}

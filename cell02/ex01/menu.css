@@ -1,0 +1,53 @@
+* {
+    font-size: 60px;
+}
+
+.home {
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dropdown {
+    position: relative; /* Keep the dropdown relative to its position */
+}
+
+.menu-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    top: 120px; /* Position the dropdown below the button */
+    left: 0;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.dropdown-content a {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: bisque;
+    border-radius: 20px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+    max-height: 500px; /* Adjust based on content height */
+}

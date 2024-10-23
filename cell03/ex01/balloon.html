@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .balloon {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="balloon" onclick="increase()" onmouseout="decrease()"></div>
+</body>
+<script>
+    let x = 200;
+    let color = ['red', 'green', 'blue'];
+    let n = 0;
+    console.log(x, n)
+    function increase() {
+        if (x <= 420) {
+            x += 10;
+            n = (n + 1) % color.length;
+            document.getElementsByClassName('balloon')[0].style.width = x + 'px'; 
+            document.getElementsByClassName('balloon')[0].style.height = x + 'px';
+            document.getElementsByClassName('balloon')[0].style.backgroundColor = `${color[n]}`;
+
+            console.log(x, n)
+        }
+        else {
+            x = 200;
+            document.getElementsByClassName('balloon')[0].style.width = x + 'px';
+            document.getElementsByClassName('balloon')[0].style.height = x + 'px';
+            document.getElementsByClassName('balloon')[0].style.backgroundColor = `${color[0]}`;
+
+            console.log(x, n)
+        }
+    }
+    function decrease() {
+        if (x > 200) {
+            x -= 5;
+            n = (n - 1 + color.length) % color.length;
+            document.getElementsByClassName('balloon')[0].style.width = x + 'px';
+            document.getElementsByClassName('balloon')[0].style.height = x + 'px';
+            document.getElementsByClassName('balloon')[0].style.backgroundColor = `${color[n]}`;
+            console.log(n)
+        }
+        else {
+            console.log("cap")
+        }
+    }
+</script>
+
+</html>
