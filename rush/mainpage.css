@@ -1,0 +1,133 @@
+html {
+    scroll-behavior: smooth;
+}
+  
+* {
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+/* Base Typo */
+h1 {
+    font-size: clamp(40px, 10vw + 10px, 60px); /* Responsive font size */
+    margin: 0;
+    color: #00083f;
+}
+
+h2 {
+    font-size: clamp(20px, 4vw + 8px, 40px); /* Responsive font size */
+    margin: 0;
+    color: #00083f;
+}
+
+h3 {
+    font-size: clamp(20px, 2vw + 4px, 32px); /* Responsive font size */
+    font-weight: 100;
+    margin: 0;
+    color: #3A6D8C;
+}
+
+p {
+    font-size: clamp(16px, 2vw + 4px, 24px); /* Responsive font size */
+    color: whites;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Background styling */
+.Background {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.Background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    backdrop-filter: blur(10px); /* Blur effect */
+    z-index: 1;
+}
+
+.Background-text {
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    color: #f2f0ef;
+    text-align: center;
+    z-index: 2;
+}
+
+.Background-text h1, .Background-text h2, .Background-text h3 {
+    color: whitesmoke;
+}
+
+/* Blog list styling */
+.blog-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.blog-card {
+    padding: 0;
+    width: 400px;
+    height: 600px;
+    text-align: center;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+
+.blog-card:hover {
+    transform: scale(1.05);
+}
+
+.blog-text {
+    padding: 10px;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.blog-text h2 {
+    font-size: 32px;
+    color: #001F3F;
+}
+
+.blog-text h3 {
+    font-size: 28px;
+    color: #3A6D8C;
+}
+
+a:link {
+    text-decoration: none;
+}
+.p{
+    margin: 13vh;
+}
