@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-contain {
+            background-color: darkgrey;
+            border: none;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <form id = "calcForm">
+        <input class="bg-contain" type="text" size="10"name="first_val" id="firstVal">
+        <input type="radio"name="radAnswer" value="+" id="add" />
+        <label>+</label>
+        <input type="radio"name="radAnswer"  value="-" id="subtract"/>
+        <label>-</label>
+        <input type="radio"name="radAnswer"  value="x" id="multioly"/>
+        <label>x</label>
+        <input type="radio"name="radAnswer"  value="÷" id="divided" />
+        <label>÷</label>
+        <input class="bg-contain" type="text" size="10"name="first_val" id="secondVal">
+        <br>
+        <input  style="margin-top: 10px;border: none;width: 75px;height: 35px;" type="submit" value="Submit">
+    </form>
+
+  <script>
+     document.getElementById('calcForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const firstVal = Number(document.getElementById('firstVal').value)
+        const secondVal = Number(document.getElementById('secondVal').value)
+        const radios = document.getElementsByName('radAnswer');
+        
+        let operation
+        let result
+        for (const radio of radios) {
+            if (radio.checked) {
+                operation = radio.value 
+                break 
+            }
+        }
+
+        if (!isNaN(firstVal) &&  !isNaN(secondVal) 
+           && firstVal != 0 && secondVal != 0
+           && operation != undefined
+           ) { //if it's a number
+            result = operation == '+' ? firstVal + secondVal 
+            : operation == '-' ? firstVal - secondVal  
+            : operation == 'x' ? firstVal * secondVal 
+            : ''
+
+            if (operation == '÷') {
+                if (firstVal == 0 || secondVal == 0) {
+                    return alert("It's over 90000!")
+                }
+                result = firstVal / secondVal 
+            }
+
+            alert(result)
+        } else if(isNaN(firstVal) || isNaN(secondVal)) {
+            alert('The value must be number')
+
+        }else {
+            alert('All input is required')
+        }
+     })
+
+     setInterval(()=>{
+        alert('Please, use me...')
+     },30000)
+
+  </script>
+</body>
+</html>
