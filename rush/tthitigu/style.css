@@ -15,6 +15,8 @@ body {
     background-size: 100% auto;
 
 
+
+
 }
 
 div .Logo {
@@ -30,8 +32,13 @@ div .Logo {
     justify-content: center;
     align-items: center;
     position: fixed;
-
     top: 0;
+    ul{
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
 
 .my-content {
@@ -60,14 +67,15 @@ div .Logo {
         }
     }
     color: whitesmoke;
-    padding: 40px;
-    margin-top: 10em;
-    margin-left: 35em;
-    width: 50%;
-    height: auto;
+
+
+
+
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 0 40px 0;
 
     align-items: center;
 
@@ -75,9 +83,7 @@ div .Logo {
 }
 
 
-@media screen and (min-width: 700px) and (max-width: 1399px) {
-   
-}
+
 
 
 
@@ -166,30 +172,25 @@ div .Logo {
 
 
 .certificate-container {
-    .certificate-row {
+    .certificate-row { 
         div {
             img {
                 width: 100%;
                 height: 50%;
             }
             background: rgb(32,39,47);
-            width: 17%;
+            width: 300px;
             height: 100%;  
             overflow: hidden;
             border-radius: 5px;
         }
-
-        width: 75%; 
-        height: 500px;
-    
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
-        margin-bottom: 25px;  
+        justify-content: center;
+        gap: 60px;
     }
     padding: 10px;
     height:auto;
-    /* background-color: green; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -208,9 +209,10 @@ div .Logo {
     
        
     }
+    overflow: hidden;
     margin-top: 150px;
     width: 50%;
-    height: 350px;
+    height: auto;
     background-color: rgba(63,84,207,0.3);
     border-radius: 30px;
     border:  2px solid rgb(131,154,194);
@@ -344,8 +346,8 @@ li a:hover {
 
 /* Responsive Design */
 
-@media screen and (min-width: 1600px) {
-    .my-content {
-        /* width: 20%; */
+@media screen and (max-width: 1000px) {
+    .bg-container{
+        display: none;
     }
 }
