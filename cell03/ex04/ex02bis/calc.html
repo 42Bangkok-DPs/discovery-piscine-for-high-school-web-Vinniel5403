@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+</head>
+<body>
+    <form id="calcForm">
+        <!-- Left operand -->
+        <input type="text" id="leftOperand" placeholder="Enter a number">
+        
+        <!-- Operator selection -->
+        <select id="operator">
+            <option value="">Select Operator</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        
+        <!-- Right operand -->
+        <input type="text" id="rightOperand" placeholder="Enter a number">
+        
+        <!-- Submit button -->
+        <input type="submit" value="Try me!">
+    </form>
+
+    <script>
+        document.getElementById('calcForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents form from submitting traditionally
+
+            // Retrieve input values and operator
+            const leftOperand = document.getElementById('leftOperand').value;
+            const rightOperand = document.getElementById('rightOperand').value;
+            const operator = document.getElementById('operator').value;
+
+            // Check if inputs are valid positive integers
+            if (!/^\d+$/.test(leftOperand) || !/^\d+$/.test(rightOperand)) {
+                alert('Error :(');
+                console.error('Error :(');
+                return;
+            }
+
+            // Convert input values to integers
+            const left = parseInt(leftOperand, 10);
+            const right = parseInt(rightOperand, 10);
+
+            let result;
+
+            // Handle division/modulo by zero cases
+            if ((operator === '/' || operator === '%') && right === 0) {
+                alert("It's over 9000!");
+                console.error("It's over 9000!");
+                return;
+            }
+
+            // Calculate result based on operator
+            switch (operator) {
+                case '+':
+                    result = left + right;
+                    break;
+                case '-':
+                    result = left - right;
+                    break;
+                case '*':
+                    result = left * right;
+                    break;
+                case '/':
+                    result = left / right;
+                    break;
+                case '%':
+                    result = left % right;
+                    break;
+                default:
+                    alert('Error :(');
+                    console.error('Error :(');
+                    return;
+            }
+
+            // Display result in alert and log to console
+            alert(`Result: ${result}`);
+            console.log(`Result: ${result}`);
+        });
+
+        // Alert every 30 seconds
+        setInterval(() => {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+</body>
+</html>
