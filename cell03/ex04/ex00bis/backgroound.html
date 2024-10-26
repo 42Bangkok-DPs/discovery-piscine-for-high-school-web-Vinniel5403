@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Color</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="background.css">
+</head>
+<body>
+    <button>Click me!</button>
+
+    <script>
+        $(document).ready(() => {
+            $("button").click(() => {
+                // Generate random RGB values for each color channel
+                let r = Math.floor(Math.random() * 256);
+                let g = Math.floor(Math.random() * 256);
+                let b = Math.floor(Math.random() * 256);
+
+                // Set the background color of the body to the random RGB value
+                $('body').css('background-color', `rgb(${r}, ${g}, ${b})`);
+            });
+        });
+    </script>
+</body>
+</html>
